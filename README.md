@@ -1,4 +1,4 @@
-# Projeto ETL - Santander Dev Week 2023
+# Projeto ETL
 
 Pipeline ETL em Python que gera e envia mensagens de marketing personalizadas sobre investimentos para clientes.
 
