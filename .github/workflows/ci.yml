@@ -73,12 +73,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Create test CSV
-      run: |
-        echo "UserID" > test.csv
-        echo "1" >> test.csv
-        echo "2" >> test.csv
-    
     - name: Run ETL in mock mode
       run: |
-        python -m src.etl.main --csv test.csv --mode mock --dry-run
+        python -m src.etl.main --csv SDW2023.csv --mode mock --dry-run
