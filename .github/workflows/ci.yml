@@ -73,6 +73,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Run ETL in mock mode
+    - name: Start mock server
       run: |
-        python -m src.etl.main --csv SDW2023.csv --mode mock --dry-run
+        python scripts/mock_server.py &
+        sleep 3
+    
+    - name: Run ETL with mock server
+      run: |
+        python -m src.etl.main --csv SDW2023.csv --mode mock --api-url http://localhost:5000
